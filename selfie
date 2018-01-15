@@ -1,0 +1,34 @@
+#!/bin/bash
+#############################################################
+# Purpose: Makes a copy of files passed as input into the   # 
+# ~/STORAGE folder, which will be created if absent. Backup #
+# file name is based on current date/time.                  #
+# Usage: selfie <file1> <file2> .....         		        #
+# Author: Prabhu Rangarajan                                 # 
+# Date: May 31 2015                                         # 
+#############################################################
+if [ $# -eq 0 ] 
+then
+echo "No file names specified"
+exit
+fi
+
+mkdir -p ~/STORAGE
+currfile=$1
+while test $currfile
+do
+backup=${currfile}_`date +%y%m%d_%H%M%S`
+#echo $backup
+if [ -f $currfile ] 
+	then
+	cp -p $currfile ~/STORAGE/$backup
+	if [ $? -eq 0 ]
+	then 
+	echo "Created backup file ~/STORAGE/$backup"
+	fi
+else
+    echo "$currfile is not a valid file."
+fi
+shift
+currfile=$1
+done

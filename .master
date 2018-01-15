@@ -1,0 +1,51 @@
+export d=/media/prabhu 
+export n=~/NOTES
+export app=$d/APPS
+export spr=$d/SPR
+export pre=$d/PREK
+export spo=$d/SPORT
+export car=$d/CAREER
+export www=/var/www
+
+#One for each of the above
+alias d="cd $d"
+alias n="cd $n"
+alias app="cd $app"
+alias spr="cd $spr"
+alias pre="cd $pre"
+alias spo="cd $spo"
+alias car="cd $car"
+alias www="cd $www"
+
+alias s="sudo"
+alias h="history"
+alias c="clear"
+alias l="ls -ltr"
+alias up="cd .."
+alias up2="cd ../.."
+alias up3="cd ../../.."
+alias vim="vim -u ~/SCRIPTS/.vimrc"
+alias sgu="sudo apt-get update"
+alias sgi="sudo apt-get install"
+alias sgif="sudo apt-get install -f"
+alias 0="source ~/SCRIPTS/.master"
+alias 1="vim ~/SCRIPTS/.master"
+alias install="sudo dpkg -i" 
+
+#command shows all the shortcuts available
+function ez {
+    grep alias ~/SCRIPTS/.master| grep -v grep | cut -d "=" -f1-2 | tr -s "\"" " " | tr -s "=" " " | cut -d " " -f2-8 | column
+}
+
+function gm {      # Quick find
+    find . -iname "*$1*" 
+}
+
+function g {       # Quick grep
+    grep $1 $2/*
+}
+
+PS1="\w> "
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:~/SCRIPTS/:.
+export JAVA_HOME=
+export SPARK_HOME=
