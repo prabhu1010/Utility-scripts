@@ -45,6 +45,11 @@ function g {       # Quick grep
     grep $1 $2/*
 }
 
+function pageCount {  #Count number of pages in a pdf file
+	echo -n "$1 : "
+	pdfinfo $1 | grep "Pages" | cut -d " " -f11
+}
+
 PS1="\w> "
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:~/SCRIPTS/:.
 export JAVA_HOME=
