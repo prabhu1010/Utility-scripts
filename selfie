@@ -3,7 +3,7 @@
 # Purpose: Makes a copy of files passed as input into the   # 
 # ~/STORAGE folder, which will be created if absent. Backup #
 # file name is based on current date/time.                  #
-# Usage: selfie <file1> <file2> .....         		        #
+# Usage: selfie <file1> <file2> .....         		    #
 # Author: Prabhu Rangarajan                                 # 
 # Date: May 31 2015                                         # 
 #############################################################
