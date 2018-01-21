@@ -1,3 +1,4 @@
+syntax on
 se title
 se nu
 se showmode
@@ -11,5 +12,11 @@ se ruler
 se autoindent
 set wrap
 se smartcase
-highlight Cursor guifg=white 
-colo desert
+se nohls
+"highlight Cursor guifg=white 
+
+"map <silent> <F5> :call gruvbox#bg_toggle()<CR>
+"imap <silent> <F5> <ESC>:call gruvbox#bg_toggle()<CR>a
+"vmap <silent> <F5> <ESC>:call gruvbox#bg_toggle()<CR>gv
+highlight Normal ctermfg=grey ctermbg=White
+colorscheme zellner 

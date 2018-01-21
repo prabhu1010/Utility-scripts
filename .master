@@ -6,6 +6,7 @@ export pre=$d/PREK
 export spo=$d/SPORT
 export car=$d/CAREER
 export www=/var/www
+export scr=~/Utility-scripts
 
 #One for each of the above
 alias d="cd $d"
@@ -16,25 +17,43 @@ alias pre="cd $pre"
 alias spo="cd $spo"
 alias car="cd $car"
 alias www="cd $www"
+alias scr="cd $scr"
 
+#command shortcuts 
+alias fb="firefox-bin"
 alias s="sudo"
 alias h="history"
 alias c="clear"
 alias l="ls -ltr"
+alias k="pkill"
 alias up="cd .."
 alias up2="cd ../.."
 alias up3="cd ../../.."
-alias vim="vim -u ~/SCRIPTS/.vimrc"
+alias vim="vim -u $scr/.vimrc"
 alias sgu="sudo apt-get update"
 alias sgi="sudo apt-get install"
+alias sgr="sudo apt-get remove"
 alias sgif="sudo apt-get install -f"
-alias 0="source ~/SCRIPTS/.master"
-alias 1="vim ~/SCRIPTS/.master"
+alias 0="source $scr/.master"
+alias 1="vim $scr/.master"
 alias install="sudo dpkg -i" 
+alias h2="head -2"
+alias h3="head -3"
+alias t2="tail -2"
+alias t3="tail -3"
+alias lh="vim $n/Notes_LaptopHacks"
+alias regfont="sudo fc-cache"
+alias devs="sudo fdisk -l | grep dev"
+alias dir="ls -d */"
+alias um="sudo umount"
+alias m="sudo mount"
+alias disksplace="df -h"
+alias offon="sudo shutdown -r now"
+alias off="sudo shutdown -P now"
 
 #command shows all the shortcuts available
 function ez {
-    grep alias ~/SCRIPTS/.master| grep -v grep | cut -d "=" -f1-2 | tr -s "\"" " " | tr -s "=" " " | cut -d " " -f2-8 | column
+    grep alias $scr/.master| grep -v grep | cut -d "=" -f1-2 | tr -s "\"" " " | tr -s "=" " " | cut -d " " -f2-8 | column
 }
 
 function gm {      # Quick find
@@ -51,6 +70,6 @@ function pageCount {  #Count number of pages in a pdf file
 }
 
 PS1="\w> "
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:~/SCRIPTS/:.
-export JAVA_HOME=
-export SPARK_HOME=
+export JAVA_HOME=/usr/lib/jdk1.8.0_144
+export SPARK_HOME=/usr/lib/spark
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/firefox/:$scr:$JAVA_HOME/bin:$SPARK_HOME/bin:.
