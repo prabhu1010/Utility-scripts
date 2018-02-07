@@ -1,4 +1,4 @@
-export d=/media/prabhu 
+export d=/media/prabhu/C3* 
 export n=~/NOTES
 export app=$d/APPS
 export spr=$d/SPR
