@@ -1,0 +1,53 @@
+<html>
+<head>
+			<script>
+				var INCR = 11;
+				var timer, count = 0, fin1 = 0;
+				
+				function getASCIIValue(chr) {
+					return chr.charCodeAt();
+				}
+				
+				function Clear() {
+				document.getElementById("content2").innerHTML = "" ;
+				}
+				
+				function MoveUp(modifier) {
+					console.log("modifier is" +modifier);
+					
+					newStr = "" ;
+					oldStr = document.getElementById("content1").value;
+					
+					console.log("old is " +oldStr);
+					Clear();
+													
+					for (var idx in oldStr) {
+						val = getASCIIValue(oldStr[idx]);
+						
+						if (modifier == 'inc')
+							new_val = val + INCR;
+						else
+							new_val = val - INCR;
+							
+						new_char = String.fromCharCode(new_val);
+						console.log("new_char is " +new_char);
+						
+						newStr += new_char;
+						console.log(newStr);
+					}
+					document.getElementById("content2").innerHTML = newStr ;
+				}
+				
+			</script>
+</head>
+<body>
+		<textarea id="content1" rows=24 cols=100 style="float:left;"></textarea>
+		<textarea id="content2" rows=24 cols=100 style="float:left;"></textarea>
+		<br clear=all>
+		<center>
+			<button onclick="MoveUp('inc');">+</button>
+			<button onclick="MoveUp('dec');">-</button>
+			<button onclick="Clear();">Clear</button>
+		</center>
+</body>
+</html>
